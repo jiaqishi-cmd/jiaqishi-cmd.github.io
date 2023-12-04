@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | 回音</title>
+    <title>test | 回音</title>
     <meta name="author" content="echo" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -34,7 +34,13 @@
 
 
 
-<script src="/js/lib/search.js"></script>
+
+
+
+<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
+
 
 
 
@@ -146,56 +152,40 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
-    
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
-    
-    <div id="timeline-wrap" ref="timeline">
+            <div class="article">
+    <div>
+        <h1>test</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/4
+        </span>
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/1</div>
-                <a href="/2023/12/01/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="软件插件安装帖子记录">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/1</div>
-                <a href="/2023/12/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-                    <h3>软件插件安装帖子记录</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="test">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/4</div>
-                <a href="/2023/12/04/test/">
-                    <h3>test</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h3 id="zotero-相关"><a href="#zotero-相关" class="headerlink" title="zotero 相关"></a>zotero 相关</h3><h5 id="zotero-坚果云存储文献"><a href="#zotero-坚果云存储文献" class="headerlink" title="zotero 坚果云存储文献"></a>zotero 坚果云存储文献</h5><p><a target="_blank" rel="noopener" href="https://help.jianguoyun.com/?p=4190&amp;eqid=d9c7eed90000429f000000066475b6a2">坚果云使用 Zotero 配置过程详解</a></p>
+<h5 id="zotero-pdf"><a href="#zotero-pdf" class="headerlink" title="zotero pdf"></a>zotero pdf</h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fengdu78/article/details/125025986">【效率】Zotero 具备谷歌翻译功能了，效率值拉满</a></p>
+<h5 id="zotero-gpt"><a href="#zotero-gpt" class="headerlink" title="zotero gpt"></a>zotero gpt</h5><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/640262419">【论文阅读写作利器】ZoteroGPT，和论文无障碍交流</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/641502612">【和论文无障碍交流】zotero-gpt进阶使用指南</a></p>
+<h3 id="vscode-verilog"><a href="#vscode-verilog" class="headerlink" title="vscode verilog"></a>vscode verilog</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/HGGshiwo/article/details/115223314">VsCode配置之verilog</a></p>
+
+    </div>
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+    
 </div>
 
             <footer id="footer">
@@ -226,6 +216,29 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://comment.jiaqishi.online/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "en-US, zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
     
 </body>
 </html>
