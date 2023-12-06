@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>回音</title>
+    <title>在vscode上面使用matlab | 回音</title>
     <meta name="author" content="echo" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -36,7 +36,13 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -146,32 +152,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/gaze.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>回音</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>在vscode上面使用matlab</h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/12/06/%E5%9C%A8vscode%E4%B8%8A%E9%9D%A2%E4%BD%BF%E7%94%A8matlab/">
-        <h2 class="post-title">在vscode上面使用matlab</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -181,145 +166,59 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>想要用vscode上的github copilot插件写m代码来提高生产力，但是网络上面的教程各有侧重，MATLAB插件的配置教程普遍有些过期，下面记录一下安装和测试过程。（matlab版本2020b）参考的第一篇帖子提供了最新的MATLAB插件配置方法，第二篇帖子提供了代码编写辅助功能和在vscode调用matlab终端的方法。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/06/%E5%9C%A8vscode%E4%B8%8A%E9%9D%A2%E4%BD%BF%E7%94%A8matlab/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/04/%E8%BD%AF%E4%BB%B6%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%B8%96%E5%AD%90%E8%AE%B0%E5%BD%95/">
-        <h2 class="post-title">软件插件安装帖子记录</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这篇帖子是记录我安装配置参考的帖子。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/04/%E8%BD%AF%E4%BB%B6%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%B8%96%E5%AD%90%E8%AE%B0%E5%BD%95/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/01/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="highlight bash">$ hexo new <span class="string">&quot;My New Post&quot;</span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="highlight bash">$ hexo server</code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="highlight bash">$ hexo generate</code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="highlight bash">$ hexo deploy</code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/01/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
+    <div class="content" v-pre>
+        <h1>基础功能</h1>
+<h3 id="安装MATLAB插件和Code-Runner插件">安装MATLAB插件和Code Runner插件</h3>
+<p>参考帖子：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129254524">搭建 MATLAB 轻量级编写环境（VSCode | JupyterLab）</a></p>
+<p>MATLAB插件的安装得到了简化，只需要安装路径（下图分别为插件官方介绍和具体设置）</p>
+<p><img src="C:%5CUsers%5CAdministrator.DESKTOP-HMA0IOU%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231206110811529.png" alt="image-20231206110811529"></p>
+<p><img src="C:%5CUsers%5CAdministrator.DESKTOP-HMA0IOU%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231206110934117.png" alt="image-20231206110934117"></p>
+<p>MATLAB设置也可以直接在settings.json中进行修改。</p>
+<pre><code class="highlight json"><span class="attr">&quot;MATLAB.installPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\Program Files\\MATLAB\\R2020b&quot;</span><span class="punctuation">,</span>
+<span class="attr">&quot;code-runner.executorMap&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
+      <span class="attr">&quot;matlab&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cd $dir &amp;&amp; matlab -nosplash -nodesktop -r $fileNameWithoutExt&quot;</span>
+<span class="punctuation">&#125;</span><span class="punctuation">,</span></code></pre>
+<h3 id="测试">测试</h3>
+<pre><code class="highlight matlab">X = (<span class="number">0</span>:<span class="number">1800</span>)*<span class="built_in">pi</span>/<span class="number">180</span>; Y = <span class="built_in">cos</span>(X/<span class="number">2</span>);
+<span class="built_in">figure</span>(<span class="number">1</span>)
+subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>); <span class="built_in">plot</span>(X, Y, <span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">2</span>); xlim([<span class="number">0</span> <span class="number">30</span>]); grid on;
+subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>); <span class="built_in">plot</span>(X, Y, <span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">2</span>); xlim([<span class="number">0</span> <span class="number">30</span>]); grid on; grid;
+subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>); <span class="built_in">plot</span>(X, Y, <span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">2</span>); xlim([<span class="number">0</span> <span class="number">30</span>]); grid; grid off;</code></pre>
+<img src="C:\Users\Administrator.DESKTOP-HMA0IOU\AppData\Roaming\Typora\typora-user-images\image-20231206111321448.png" alt="image-20231206111321448" style="zoom: 80%;" />
+<h1>额外功能</h1>
+<p>参考帖子：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Joker00007/article/details/127760652">VS Code配置matlab</a>这个帖子很详细，可以完全按照这个帖子操作。</p>
+<pre><code class="highlight json"><span class="attr">&quot;files.associations&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
+    <span class="attr">&quot;*.m&quot;</span><span class="punctuation">:</span><span class="string">&quot;matlab&quot;</span><span class="punctuation">,</span>
+<span class="punctuation">&#125;</span><span class="punctuation">,</span>
+
+<span class="attr">&quot;code-runner.runInTerminal&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span>
+
+<span class="attr">&quot;[matlab]&quot;</span> <span class="punctuation">:</span> <span class="punctuation">&#123;</span>
+    <span class="attr">&quot;files.encoding&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gb2312&quot;</span><span class="punctuation">,</span>
+<span class="punctuation">&#125;</span><span class="punctuation">,</span>
+
+<span class="attr">&quot;files.autoGuessEncoding&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span>
+</code></pre>
+<p>从这部分开始进行。</p>
+<h3 id=""></h3>
+
+    </div>
     
     
     
     
-</div>
-
-    </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/dachen.jpg" alt="avatar" />
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
         </div>
-        <div class="name">echo</div>
-        <div class="description">
-            <p>凡事有交代，件件有着落，事事有回音。</p>
+        
 
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/jiaqishi-cmd">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://chatgpt.jiaqishi.online/">
-                    <i
-                        class="fa-brands fa-centos fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
+    
     
 </div>
 
@@ -351,6 +250,30 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://comment.jiaqishi.online/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji,https://unpkg.com/@waline/emojis@1.2.0/soul-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
     
 </body>
 </html>
