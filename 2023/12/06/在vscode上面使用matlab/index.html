@@ -170,10 +170,8 @@
     <div class="content" v-pre>
         <h1 id="基础功能"><a href="#基础功能" class="headerlink" title="基础功能"></a>基础功能</h1><h3 id="安装MATLAB插件和Code-Runner插件"><a href="#安装MATLAB插件和Code-Runner插件" class="headerlink" title="安装MATLAB插件和Code Runner插件"></a>安装MATLAB插件和Code Runner插件</h3><p>参考帖子：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129254524">搭建 MATLAB 轻量级编写环境（VSCode | JupyterLab）</a></p>
 <p> MATLAB插件的安装得到了简化，只需要安装路径（下图分别为插件官方介绍和具体设置）</p>
-
-
-
-
+<p><img src="/2023/12/06/%E5%9C%A8vscode%E4%B8%8A%E9%9D%A2%E4%BD%BF%E7%94%A8matlab/image-20231206110811529.png" alt="image-20231206110811529"></p>
+<p><img src="/2023/12/06/%E5%9C%A8vscode%E4%B8%8A%E9%9D%A2%E4%BD%BF%E7%94%A8matlab/image-20231206110934117.png" alt="image-20231206110934117"></p>
 <p>MATLAB设置也可以直接在settings.json中进行修改。</p>
 <pre><code class="highlight json"><span class="attr">&quot;MATLAB.installPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\Program Files\\MATLAB\\R2020b&quot;</span><span class="punctuation">,</span>
 <span class="attr">&quot;code-runner.executorMap&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
@@ -186,10 +184,7 @@ subplot(<span class="number">1</span>,<span class="number">3</span>,<span class=
 subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>); <span class="built_in">plot</span>(X, Y, <span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">2</span>); xlim([<span class="number">0</span> <span class="number">30</span>]); grid on; grid;
 subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>); <span class="built_in">plot</span>(X, Y, <span class="string">&#x27;LineWidth&#x27;</span>, <span class="number">2</span>); xlim([<span class="number">0</span> <span class="number">30</span>]); grid; grid off;</code></pre>
 
-
-
-
-
+<p><img src="/2023/12/06/%E5%9C%A8vscode%E4%B8%8A%E9%9D%A2%E4%BD%BF%E7%94%A8matlab/image-20231206111321448.png" alt="image-20231206111321448"></p>
 <h1 id="额外功能"><a href="#额外功能" class="headerlink" title="额外功能"></a>额外功能</h1><p>参考帖子：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Joker00007/article/details/127760652">VS Code配置matlab</a>这个帖子很详细，可以完全按照这个帖子操作。</p>
 <pre><code class="highlight json"><span class="attr">&quot;files.associations&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>
