@@ -36,17 +36,9 @@
 
 
 
-
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
-
-
-
 <link rel="stylesheet" href="/css/main.css" />
 
-<meta name="generator" content="Hexo 7.0.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <div id="layout">
         <transition name="fade">
@@ -152,38 +144,12 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>Tags</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2022/4/12
-        </span>
+            <div id="archives">
+    
+    <div class="categories-tags">
         
         
     </div>
-    
-    <div class="content" v-pre>
-        
-    </div>
-    
-    
-    
-    
-    
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
-
-    
     
 </div>
 
@@ -215,30 +181,6 @@
         
     </div>
     <script src="/js/main.js"></script>
-    
-    
-
-
-<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://comment.jiaqishi.online/",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji,https://unpkg.com/@waline/emojis@1.2.0/soul-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "enable",
-        
-    });
-</script>
-
-
-
     
 </body>
 </html>
