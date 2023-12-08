@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | 回音</title>
+    <title>typora免费使用 | 回音</title>
     <meta name="author" content="echo" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -34,7 +34,13 @@
 
 
 
-<script src="/js/lib/search.js"></script>
+
+
+
+<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
+
 
 
 
@@ -146,147 +152,94 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>typora免费使用</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/25
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
             
-<div id="archives">
-    
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
-    
-    <div id="timeline-wrap" ref="timeline">
-        
-        <div class="timeline" data-title="typora免费使用">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/10/25</div>
-                <a href="/2023/10/25/typora%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8/">
-                    <h3>typora免费使用</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            学习
-                        </a>
-                    </span>
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/typora/" style="color: #00bcd4">typora</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E5%85%8D%E8%B4%B9/" style="color: #ff7d73">免费</a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="软件插件安装帖子记录">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/4</div>
-                <a href="/2023/12/04/%E8%BD%AF%E4%BB%B6%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%B8%96%E5%AD%90%E8%AE%B0%E5%BD%95/">
-                    <h3>软件插件安装帖子记录</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            学习
-                        </a>
-                    </span>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="在vscode上面使用matlab">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/6</div>
-                <a href="/2023/12/06/%E5%9C%A8vscode%E4%B8%8A%E9%9D%A2%E4%BD%BF%E7%94%A8matlab/">
-                    <h3>在vscode上面使用matlab</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            学习
-                        </a>
-                    </span>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="干花尝试">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/6</div>
-                <a href="/2023/12/06/%E5%B9%B2%E8%8A%B1%E5%B0%9D%E8%AF%95/">
-                    <h3>干花尝试</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E7%94%9F%E6%B4%BB/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            生活
-                        </a>
-                    </span>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="个人cdn">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/7</div>
-                <a href="/2023/12/07/%E4%B8%AA%E4%BA%BACDN/">
-                    <h3>个人CDN</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            学习
-                        </a>
-                    </span>
-                    
-                    
-                </div>
-            </div>
-        </div>
+            
+            <span class="tag">
+                
+                <a href="/tags/typora/" style="color: #00a596">typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%85%8D%E8%B4%B9/" style="color: #ffa2c4">免费</a>
+            </span>
+            
+        </span>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h3 id="参考帖子：">参考帖子：</h3>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/661170065">Typora激活使用指南（2023年最新版）</a></p>
+<h3 id="使用方法：">使用方法：</h3>
+<p>序列号生成（推荐）</p>
+<h3 id="破解过程：">破解过程：</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://typoraio.cn/">官网下载最新版</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231208102137152.png" alt="image-20231208102137152"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/jiaqishi-cmd/doc/releases">序列号生成工具下载</a></li>
+</ul>
+<p>把 NodeInject-windows 压缩包中的两个 exe 解压，并复制到 typora 的安装目录，就是有Typora.exe的目录，比如 D:\Program Files\Typora</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231208105006013.png" alt="image-20231208105006013"></p>
+<p>使用管理员身份运行 cmd 跳转到安装目录</p>
+<pre><code class="highlight plaintext">cd /d D:/Program Files/Typora</code></pre>
+<p>运行.exe</p>
+<pre><code class="highlight plaintext">
+# 自动配置相关文件
+.\node_inject.exe
+# 序列号生成
+.\license-gen.exe</code></pre>
+<ul>
+<li>
+<p>激活typora</p>
+<p>Email可以随意输入一个，并复制上述生成的序列号，点击激活即可</p>
+</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+
+    
+    
 </div>
 
             <footer id="footer">
@@ -317,6 +270,30 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://comment.jiaqishi.online/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji,https://unpkg.com/@waline/emojis@1.2.0/soul-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
     
 </body>
 </html>
