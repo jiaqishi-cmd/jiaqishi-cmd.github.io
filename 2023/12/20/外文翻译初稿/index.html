@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>外文翻译初稿 | 回音</title>
+    <meta name="author" content="echo" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/dachen.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>回音</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;回音</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>外文翻译初稿</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AC%E7%A7%91%E6%AF%95%E8%AE%BE/" style="color: #ff7d73">本科毕设</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/" style="color: #00a596">外文翻译</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1>单载波宽带无线系统的频域均衡</h1>
+<h3 id="摘要">摘要</h3>
+<p>随着多径延迟扩展到几十或几百比特间隔，在住宅和商业环境中部署的宽带无线接入系统可能面临恶劣的无线电传播环境。正交频分复用 (OFDM) 是一种公认的对抗这种多径条件影响多载波解决方案。本文考察了应用于单载波 (SC) 调制方案的频域均衡 (FDE)。采用频域均衡的 SC 无线电调制解调器具有与 OFDM 相似的性能、效率和低信号处理复杂度优势，此外，它对RF 损失（比如功率放大器非线性）的敏感度低于 OFDM。我们讨论 SC 和 OFDM 系统的异同以及共存的可能性，并给出了 SC-FDE 性能示例。</p>
+<h3 id="引言">引言</h3>
+<p>为住宅和企业用户提供每秒几十兆比特或更高的比特率的宽带无线接入技术，是对于宽带有线接入技术具有吸引力且经济性的替代方案。IEEE 802.16工作组和欧洲电信标准协会( ETSI )宽带无线接入网( BRAN )高性能城域网( Hiper MAN )小组正在制定11 GHz以下授权和非授权频段的宽带无线城域网( MAN )系统空中接口标准。以极小劳动力成本安装的此类系统，可以通过非视距（NLOS）链路运行，为住宅和小型办公室/家庭办公室（SOHO）用户提供服务。在这些环境中，多路径可能会很严重。这就提出了一个问题：需要什么类型的抗多径措施，并且它们与低成本解决方案相一致。有几种正交频分复用（OFDM）的变体被提出作为有效的抗多径技术，主要因为它们在应对严重多径和信号处理复杂性之间提供了良好的权衡[1]。</p>
+<p>本文讨论一种基于更传统的单载波 (SC) 调制方法的替代方法。我们证明，当与频域均衡 (FDE) 结合使用时，这种 SC 方法可提供与 OFDM 类似的性能，并且整体复杂度基本相同。另外，SC 调制使用单个载波，而不是在 OFDM 中通常使用的多个载波，因此 SC 调制信号的峰均比更小。这又意味着 SC 发射机的功率放大器需要更小的线性范围来支持给定的平均功率（换句话说，需要更少的峰值功率回退）。因此，与OFDM 系统相比，可以使用更便宜的功率放大器；这是一个有一定重要性的优势，因为功率放大器可能是消费级宽带无线收发器中成本较高的组件之一。</p>
+<h3 id="多径信道特性和抗多径方法">多径信道特性和抗多径方法</h3>
+<p>居民小区的宽带蜂窝无线接入系统必须应对主要由多径带来的传播损失，这会导致接收到的传输信号的多个回波时延高达几十微秒[2]。对于每秒几十兆的比特率，这会转化为多达 100 个或更多数据符号的符号间干扰。例如，在 5 MHz 符号速率下，20 μs 多径时延超过 100 个数据符号。</p>
+<p>对于几十或几百个符号的信道响应，可行的调制和抗多径替代方案有：</p>
+<ul>
+<li>
+<p>在时域中进行接收器均衡的SC 调制</p>
+</li>
+<li>
+<p>OFDM</p>
+</li>
+<li>
+<p>在频域中进行接收器均衡的SC 调制</p>
+</li>
+</ul>
+<p>下面对这些抗多径方案中的每一种进行简要的描述。</p>
+<h4 id="接收端采用时域均衡的单载波调制">接收端采用时域均衡的单载波调制</h4>
+<p>一种在语音频带电话调制解调器中首创并已应用于许多其他数字通信系统中的传统抗多径方法，是传输使用例如正交幅度调制（QAM）的数据进行调制的单载波，并在接收器处使用自适应均衡器来补偿码间干扰 (ISI) [3]。它的主要组件是一个或多个横向滤波器，其自适应抽头系数的数量约为多径所跨越的数据符号的数量。对于上面20μs时延的例子，这意味着横向滤波器要有至少 100 个抽头，并且每个数据符号至少要进行几百次乘法运算。对于每秒几十个兆符号和多达 30-50 个符号的码间干扰，复杂性和所需的数字处理速度变得过高，所以这种时域均衡方法变得不具有吸引力。</p>
+<h4 id="OFDM">OFDM</h4>
+<p>OFDM 并行传输多个调制子载波 [1]。每个仅占用非常窄的带宽。因为信道只影响每个子载波的幅度和相位，所以均衡每个子载波的增益和相位可以补偿频率选择性衰落。在发射机处对 M 个数据符号块执行快速傅里叶逆变换 (IFFT) 生成多个子载波；在接收器处对 M 个接收样本块执行快速傅立叶变换 (FFT) 提取子载波。通常，FFT 块长度 M 至少是最大脉冲响应跨度的 4-10 倍。这样做的一个原因是尽量减少在每个块的开头插入循环前缀导致的部分开销。循环前缀是块中最后数据符号的重复。它的数据符号长度需要超过最大预期延迟扩展。循环前缀在接收器处被去除。其目的是：</p>
+<ul>
+<li>
+<p>防止ISI污染前一个块</p>
+</li>
+<li>
+<p>使接收到的块看起来是M 的周期性</p>
+</li>
+</ul>
+<p>这会需要对于 FFT 运算正常运行至关重要的循环卷积。</p>
+<p>时域均衡通常需要每个符号进行与最大信道冲激响应长度成比例的多次乘法运算。 OFDM 处理要求对每个数据符号进行 log2M 次乘法，同时对发射机和接收机操作计数。由于M与最大期望信道响应长度成正比，因此对于大的( &gt; 20次左右)多径扩展，OFDM看起来比传统采用时域均衡的SC调制提供了更好的性能/复杂度权衡[ 4 ]。一个变种是自适应的OFDM，其中每个子信道上的信号星座取决于该频率下的信道响应。它需要从接收器反馈到发射器，并且由于复杂度和信道时间变化而在无线电系统中不常用。因为每个子信道上的功率和比特率是固定的，其中一些子信道可能会被频率选择性信道严重衰减，因此必须对非自适应的OFDM 进行编码。</p>
+<p>因为传输的 OFDM 信号是大量 (M) 个缓慢调制子载波的总和，所以即使在每个子载波上使用四相相移键控 (QPSK) 等低阶调制， OFDM 也具有较高的峰均比。虽然有信号处理方法可以减少这个比率，但与单载波系统相比，在OFDM系统中，发射机的功率放大器通常必须多回退几分贝以保持在需要准确重现的信号包络峰值范围内的线性特性。图1a和1b（取自[5]）展示了在一个标准功率放大器输出端，对于一个采用256点FFT的QPSK OFDM系统，在功率减少了10dB的情况下发生的频谱再生，其中图1a是指有25%的子载波未被使用，而图1b是指采用了25%多余带宽的QPSK SC系统。这些图中还显示了理想状态下（无限回退）功率放大器的输出功率谱，以及（用直线表示的）FCC针对带有6 MHz带宽的多通道微波分配系统（MMDSs）的频谱掩模。显然，在这个例子中，OFDM 系统的输出功率必须回退 10 dB 以上，才能符合 FCC 掩模。这种功率回退损失对于靠近小区边缘的用户尤其重要，因为路径损耗较大，必须使用如二进制 PSK (BPSK) 或 QPSK 调制的较低阶调制。在这种情况下，OFDM 所需的功率回退的增加将增加此类站点“到达”基站所需功率放大器的成本。 OFDM 系统还表现出对载波频率偏移和相位噪声的敏感性。</p>
+<p>导频（已知）数据也经常被合并到这些数据块中以用于信道跟踪和估计目的。更重要的是，在突发应用中，一个或多个这种大小的块被用于初始接收器训练目的。OFDM系统所涉及的另一个问题是数据包的粒度：在OFDM系统中，数据包的最小大小是FFT块长度。这个问题影响了短数据包传输的频谱效率，可以通过使用正交频分多址接入 (OFDMA) 来避免，其中 FFT 块由多个用户共享，每个用户使用构成 FFT 的子载波子块。 在单载波（SC）系统中，粒度问题可以通过在必要时传输短时间的数据块来简单解决。</p>
+<h4 id="接收器处具有频域自适应均衡器处理的单载波调制">接收器处具有频域自适应均衡器处理的单载波调制</h4>
+<p>SC系统以高符号率传输例如用QAM调制的单载波。SC系统中的频域线性均衡简单来说就是传统时域线性均衡器的频域模拟。对于延迟传播严重的信道，频域均衡比相应的时域均衡在计算上更为简单，原因同样是OFDM更简单：因为均衡一次在一个数据块上进行，在这个数据块上的操作涉及一个高效的FFT操作和一个简单的信道求逆运算。Sari等人[ 6、7]指出，当结合FFT处理和使用循环前缀时，使用FDE的SC系统( SC-FDE )具有与OFDM系统基本相同的性能和低复杂度。另外值得注意的是，处理SC调制数据的频域接收机与OFDM接收机共享许多常见的信号处理功能。实际上，正如我们在下一部分中指出的那样，SC和OFDM调制器可以轻松配置共存，并且通过这种共存可以获得显著的优势。</p>
+<p>图 2 显示了传统的线性均衡，使用具有 M 个抽头系数的横向滤波器，但在频域中进行滤波。对于OFDM和SC - FDE系统，适合带宽为6 MHz的MMDS系统的块长度M可在64 ~ 2048范围内选择。与OFDM一样，每个符号大约有log2M的乘法运算。</p>
+<p>通过处理接收信号的FFT，使用SC 调制和FDE 有几个具有吸引力的特点：</p>
+<ul>
+<li>
+<p>SC 调制降低了OFDM 的峰均比要求，从而允许使用成本较低的功率放大器。</p>
+</li>
+<li>
+<p>即使对于很长的信道延迟扩展，其 FDE 性能与 OFDM 类似。</p>
+</li>
+<li>
+<p>频域接收机处理具有与 OFDM 类似的复杂性降低优势：复杂性与多径扩展的对数成正比。</p>
+</li>
+<li>
+<p>在应对频率选择性时，编码虽然可取，但并非像非自适应的OFDM系统那样必要。</p>
+</li>
+<li>
+<p>在现有的许多无线和有线应用中，SC调制是一种成熟的技术，其射频系统线性度要求众所周知。</p>
+</li>
+</ul>
+<p>如图3所示，正如在OFDM中一样，在M个符号的每个块上附加一个循环前缀。</p>
+<p>作为附加功能，循环前缀可以与训练序列相结合以进行均衡器自适应。</p>
+<p>对于工作在室外严重多径环境中的OFDM或SC - FDE宽带无线系统，M的值可取256 ~ 1024，P的典型值可取64或128。也可以采用交叠保存或重叠相加信号处理技术来避免循环前缀带来的额外开销。</p>
+<p>在检测数据符号之前，逆FFT将均衡后的信号返回到时域。FDE均衡器的传递函数的自适应可以用最小均方( LMS )，最小二乘( RLS )或最小二乘最小化( LS )技术来完成，类似于时域均衡器[ 8，9 ]的自适应。</p>
+<p>图4显示了时间域和频域处理（SC或OFDM线性均衡器）的复杂性随信道脉冲响应长度变化（以符号间隔为单位）的比较。这里的复杂性是以每个传输的数据符号的复数乘法数量来衡量的，包括滤波操作和LMS自适应操作（有关后者的描述，请参阅[9]）。假设频域均衡器使用的FFT块长度等于信道长度的八倍。</p>
+<p>对于频率选择性无线信道，决策反馈均衡（DFE比线性均衡具有更好的性能[3]。在传统的DFE均衡器中，会进行逐个数据符号的决策、滤波，并立即反馈以消除其对随后检测到的符号的干扰效应。由于块 FFT 信号处理中固有的延迟，这种立即滤波决策反馈无法在使用能馈式信号频域滤波的频域 DFE 中完成。为了避免上述的反馈延迟问题，一种时频域混合DFE方法将只对DFE的前向滤波部分使用频域滤波，而对反馈部分使用传统的横向滤波。横向反馈滤波器在任何情况下都比较简单，因为它只在数据符号上执行乘法运算，并且它可以做得尽可能短或尽可能长以获得足够的性能。图5展示了这种混合时频域DFE拓扑结构。每个块中，M个FFT输出系数 {RL} 会与复数值的M个前向均衡器系数 {WL} 进行乘法运算（这些系数用于补偿频率选择性信道在频率上的振幅和相位变化）。对M个加权均衡的复数值样本进行IFFT处理，得到的时域序列传递给数据符号决策设备 — 或者在DFE的情况下，使用B个反馈分支{fk}计算先前检测到的符号引起的ISI，并逐个符号进行减除。FDE还可以与空间处理相结合，以提供干扰抑制和多样性[9]。</p>
+<h4 id="单载波与-OFDM-系统的共存">单载波与 OFDM 系统的共存</h4>
+<p>图 6a 给出了采用线性 FDE 的 OFDM 和 SC 系统的框图。显然，这两种类型的系统主要区别在于 IFFT 运算的位置：在 OFDM 中，它被放置在发射机处，将数据复用到并行的子载波中；在 SC 中，它被放置在接收机中，将 FDE 信号转换回时域符号。在FFT块长度相等的情况下，这两个系统的信号处理复杂性本质上是相同的。</p>
+<p>如图6b所示，通过在链路两端的发射机和接收机之间切换IFFT模块，可以实现双模系统，其中软件无线电调制解调器可以重新配置以处理SC或OFDM信号。</p>
+<p>实际上，在运行双模式系统方面可能存在优势，其中基站使用OFDM发射机和SC接收机，而用户调制解调器使用SC发射机和OFDM接收机，如图7所示。这种布置——下行链路使用OFDM，而上行链路使用SC——有两个潜在优势：</p>
+<p>用户的发射机是SC，因此在功耗方面本质上更高效，因为SC模式下降低了功率后退的要求。这可能降低了订阅用户功率放大器的成本。</p>
+<ul>
+<li>将大部分信号处理复杂性集中在中心站或基站。中心站有两个IFFT和一个FFT，而用户只有一个FFT。</li>
+<li>用户的发射机是SC，因此在功耗方面本质上更高效，因为SC模式下降低了功率后退的要求。这可能降低了订阅用户功率放大器的成本。</li>
+</ul>
+<h4 id="采用最小二乘最小化的均衡器训练">采用最小二乘最小化的均衡器训练</h4>
+<p>FDE参数 {Wl} 和 {fk} 是从接收到的N个连续训练块中进行自适应或训练的，每个训练块包括一系列已知的发射训练符号。训练块的长度P可以等于或小于数据块M的长度，并且在前面加上了循环前缀。如果P小于M，则P至少应选择为与数据符号间隔中预期的最大信道脉冲响应长度相等。如果P &lt; M，则从训练中导出的前向滤波器参数 {Wl，l = 0, 1, …, PI} 可以被插值到要用于M块的值。</p>
+<p>长度为P的发送训练符号序列被称为唯一字（Unique Word，UW）。理想情况下，其频谱（FFT）在所有频率上应具有相等或几乎相等的幅度。这样的理想训练序列确保了对信道的每个频率分量进行均匀探测。对于长度为2的幂次方（如64或256）的唯一字长P，多相Frank-Zadoff序列[10]或Chu序列[11]是合适的选择。如果从硬件实现的角度考虑更希望使用二进制序列，长度为2n-1的伪随机（pn）序列可以通过在正交域中添加一个小的直流值进行修改，这是Milewski [12]提出的建议。这些序列类型都具有恒幅频谱的所需特性。</p>
+<p>考虑在数据序列中周期性地插入两个或更多相连的唯一字（Unique Word），用于同步和均衡器训练。这些相连的唯一字中的第一个充当循环前缀，吸收了来自先前数据的任何ISI。第二个及随后的唯一字形成一个周期序列，具有上述理想的周期自相关特性。在连续的下行传输中可能出现的上述描述的示例如图8所示。注意，图8中的有效载荷数据块之前和之后都是连续的唯一字。</p>
+<p>直接位于数据之前的唯一字（在图8中用阴影表示）构成一个训练块的周期序列。数据段后面的每个唯一字充当后续唯一字的循环前缀，并且还可以使其免受非训练数据的 ISI 影响。如果唯一字的长度为P，数据块的长度为D，那么开销比例为2P/(D+2P)。图9给出了突发式上行或下行传输的示例。在这里，增加额外的唯一字为循环前缀，总的开销比例为3P/(D+3P)。通过在接收端使用重叠保存频域处理，可以进一步提高SC系统的效率，从而消除循环前缀的开销。</p>
+<p>唯一字用于均衡器训练，以及频域内的插值，相当于OFDM系统中使用导频音调和频域内插法的对应物。关于训练和自适应处理的详细信息可以在《SC-DFE》的白皮书中找到，链接是 <a target="_blank" rel="noopener" href="http://www.sce.carleton.ca/bbw/papers/Ariyavisitakul.pdf%E3%80%82">http://www.sce.carleton.ca/bbw/papers/Ariyavisitakul.pdf。</a></p>
+<h3 id="性能">性能</h3>
+<h4 id="理想性能">理想性能</h4>
+<p>SCFDE在使用完美信道知识和训练的情况下的比特误码率（BER）性能已通过模拟在多个具有多径衰落的宽带无线信道模型中进行了评估。“SUI-5”是IEEE 802.16a采用的六个信道模型之一，用于评估2-11 GHz频段的宽带无线系统[13]。它具有三个瑞利衰落时延，分别为0、5和10毫秒，相对功率分别为0 dB、-5 dB和-10 dB。这是与郊区多山环境中使用全向天线相关的高时延展模型。该信道的均方根时延展为3.05毫秒。衰落被建模为准静态的（在FFT块期间不变）。</p>
+<p>基于该模型，对QPSK、16 - QAM和64 - QAM SC和OFDM系统进行了一系列接收信噪比的仿真，每种随机信道实现20，000次。对于每个由蒙特卡洛模拟获得的信道实现，计算了比特误码率（BER），然后对所有信道实现的BER进行了平均。对于不同码率的比特交织卷积编码系统，通过蒙特卡洛仿真得到了BER结果。大于1/2的编码速率通过使用八进制生成多项式（133,171）对标准速率为1/2、约束长度为7的码进行最优截断实现。编码比特进行了交错，并通过格雷映射将其映射为传输的M进制QAM数据符号。由此产生的编码方案称为比特交织编码调制( BICM )，已知[ 14 ]在加性高斯白噪声信道下可以实现1 dB或2 dB以内的网格编码调制( TCM )，并且在交织器跨越多个衰落的快衰落信道下优于TCM。</p>
+<p>每个FFT块由512个QAM符号组成。在每个FFT块内部使用了行列块交织，其中数据位按行书写，按列映射到QAM符号，每行包含32位。SC系统所使用的升余弦翻转因子为10%。</p>
+<p>图10给出了在一系列平均信噪比（SNR）下，使用1/2速率码和三种（4-16-64）QAM星座评估的平均比特误码率，针对以下系统配置：</p>
+<ul>
+<li>采用频域线性均衡 (FD-LE) 的 SC 调制</li>
+<li>OFDM</li>
+<li>采用理想频域判决反馈均衡 (FD-DFE) 的 SC 调制，假设（渐近）无限长度反馈滤波器和正确反馈（无判决错误）</li>
+<li>匹配滤波器边界 (MFB)作为上届比较（匹配滤波器接收器且无 ISI 时的性能）</li>
+</ul>
+<p>在这些模拟中，假设所有系统都有完美的信道和输出 SNR 估计。</p>
+<p>图10的结果表明，对于平均信噪比较低的信道中，在合适的QPSK调制方式下，OFDM、FD-LE和理想FD-DFE单载波系统的性能相差约1.5至2dB。对于QPSK，理想FDDFE的性能与理想匹配滤波界限相差约1dB。OFDM比FD-LE稍好一些，但比理想FD-DFE稍差一些。对于16-QAM和64-QAM，结果之间的差距略有扩大，但相对排序相同。特别地，当调制阶数较高时，FD - LE的BER性能与其他系统的BER性能之间的差距变大。</p>
+<p>OFDM和FD-LE在严重频率选择性瑞利衰落信道（如SUI-5）中都会遭受噪声增强的影响，但它们对应的解码器操作和性能略有不同。对于FD-LE，噪声增强损失随着平均输入信噪比的增加而增加。换句话说，当信道存在深度零陷且信噪比高时（通常需要高阶的调制），线性均衡器会更努力地试图逆转这些零陷；结果就是，在这些零陷位置的噪声也会被放大。相比之下，OFDM可以利用各个子信道独立的（服从瑞利分布的）已知增益和相位（来自信道估计测量），并通过编码和交织将所有子信道中的有用能量进行组合。然而，OFDM在频率选择性衰落中的性能对其前向纠错（FEC）码的强度（与FEC码率相关）敏感。OFDM接收机所使用的FEC码必须具有足够强大的(也就是说,有足够的冗余)，它的纠错能力不会被随机出现的位于频率选择性零区的子信道采样的低信噪比比特所淹没。本质上，频率选择性信道和解码方法起到了屏蔽(使其变弱)码的作用：解码器会最佳地加权（即降低）极低信噪比的编码比特输入，使其有效地被视为“不重要”的被截取的比特。如果在特定的间隔内观察到过多的穿刺，则该间隔内的有效码率很高，FEC更有可能在此处传递错误。</p>
+<p>图 11a–c 给出了使用 QPSK 和更高码率（2/3、3/4 和 7/8）的 SUI-5 通道的性能。注意，对于速率 3/4 和 7/8，OFDM 的性能实际上比 FD-LE 更差。对于未编码系统（未展示出），OFDM 的 BER 性能远不如线性和 DFE SC 系统，因为在没有编码的情况下，每个 OFDM 子信道上的瑞利衰落对OFDM 符号检测器呈现平坦瑞利衰落，即使多径信道抽头本身不衰落。</p>
+<h4 id="均衡器训练和有限-DFE-的性能">均衡器训练和有限 DFE 的性能</h4>
+<p>图12给出了在SUI-5信道上使用训练过后的SC FDE的模拟性能。数据载荷采用速率为3/4的BICM 64-QAM符号。使用长度为64的N=2、4和8的Frank-Zadoff序列唯一字训练块来估计线性均衡器的前向系数。在这个例子中，信道估计过程使用频域插值从64个训练符号的FFT块外推到用于FDE的1024个符号的FFT块。图 12 中使用的性能测量是速率 3/4、64QAM 编码系统的 BER 比 10-6 差的概率（在 20,000 个 SUI-5 信道实现的集合中）。将这种概率（未维持最小 BER）称为“中断概率”。</p>
+<p>图12还显示，相对于完美信道估计，对于四个训练块，性能损失大约为1-2 dB或更小。在所有情况下，假设在使用训练符号估计信道之前信道是未知的。更重要的是，只有训练符号被用来估计信道：没有利用有效载荷符号的决策方向来逐步提高信道估计的准确性。需要注意的是，在本示例中，8个长度为64符号的训练块代表一个FFT块（1024符号）的一半长度。在突发环境中，一个或多个这些FFT块可能组成一个单独的突发传输。</p>
+<p>线性 FDE 和 DFE 还针对具有平均 RMS 延迟扩展为 1 μs的指数延迟扩展曲线的通道进行了仿真。非视距郊区环境中的多径性能应该受到此类模型的合理限制，因为 [2] 中报告的测量结果表明，在非视距郊区环境中，99% 最坏情况下的 RMS 延迟扩展约为 0.3μs。单个反馈时延被设置为信道脉冲响应中具有最大幅度延迟回波的延迟。如果要使用更多的反馈抽头，它们的延迟将被设置为第二大、第三大的回波延迟，依此类推。在实践中，这些延迟可以在训练期间从IFFT中估计出来。在此仿真中，不包括 DFE 中决策误差传播的影响对 1-tap DFE 中的错误传播进行的单独调查显示，平均 BER 增加对应于约 1 dB 或更小的退化。</p>
+<p>再次仿真了 20,000 个随机信道实现，每个信道都有 16 个独立的瑞利衰落抽头，间隔为 0.1 μs。传输信号为 16-QAM，速率为 3/4 BICM 卷积码。图 13 显示了 4 块训练的 BER &gt; 10-6 中断概率。</p>
+<h3 id="总结">总结</h3>
+<p>固定无线接入系统为非直射视线（LOS）环境中的住宅和小型企业用户提供高速数据接入可能会面临严重的时间分散问题，跨越多个比特间隔。针对这样的环境，在试图实现具有合理复杂度的抗多径性能时，应考虑基于频域处理的调制和均衡策略。频域处理是OFDM的基础，同样适用于单载波调制。然而，OFDM对功率放大器的非线性和频率偏移非常敏感。单载波调制，结合接收端的线性频域均衡（SC-FDE），比起OFDM对发射机的非线性和相位噪声更不敏感，其复杂度和性能与OFDM相似。此外，当SC-FDE与简单的稀疏时域决策反馈均衡相结合时，其性能得到了提升。</p>
+<p>此外，正如我们所看到的，SC和OFDM系统可能可以共存以实现互利和降低成本，因为它们的基本频域信号处理功能有明显的相似之处。</p>
+<p>最后，单载波技术可以轻松地与多输入多输出（MIMO）技术相结合，其中发送端和接收端都使用天线元件阵列。 MIMO 技术有可能实现巨大的频谱效率 (b/s/Hz)，仅受实际可实现的分集天线元件数量的限制 [15]。这反过来又缓解了延迟扩展问题，因为无需增加符号率即可实现所需的比特率。</p>
+<p>我们感谢 Raze Technologies 的 Paul Struhsaker 允许我们使用[5]中的图 1。</p>
+
+    </div>
+    
+    
+    
+    
+    
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 回音
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;echo
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://comment.jiaqishi.online/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji,https://unpkg.com/@waline/emojis@1.2.0/soul-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
+    
+</body>
+</html>
+<canvas
+    id="fireworks"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="/js/fireworks.min.js"></script>
+<canvas
+    id="background"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1"
+></canvas>
+<script src="/js/background.min.js"></script>
+<div id="cursor"></div>
+<link rel="stylesheet" href="/css/cursor.min.css" />
+<script src="/js/cursor.min.js"></script>
