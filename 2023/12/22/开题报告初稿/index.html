@@ -187,7 +187,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A/" style="color: #00a596">开题报告</a>
+                <a href="/tags/%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A/" style="color: #ffa2c4">开题报告</a>
             </span>
             
         </span>
@@ -230,19 +230,61 @@
 <p>这些关键技术的研究和解决将有助于在毫米波频段实现稳定、高速的500Mbps传输，并实现与其他速率档位（1Gbps）之间的平滑切换。此项研究将为毫米波通信系统的性能提升和应用拓展做出重要贡献。</p>
 <h3 id="可行性分析">可行性分析</h3>
 <h4 id="理论可行性：">理论可行性：</h4>
-<p>信号处理方案验证：所设计的500Mbps传输方案以及与1Gbps的速率切换方案，在毫米波频段下是否符合理论要求和可行性？相关的信号处理技术和调制解调方案是否已在类似环境下验证过？如果有类似研究或实验可供参考，是否已经证明了所选择方案的有效性？</p>
-<p>多径效应和相位噪声处理方法的可行性： 针对多径效应和射频产生的相位噪声提出的处理方法，是否在毫米波频段或类似环境中被证明有效？是否存在现有算法或技术能够应用于所提出的问题？</p>
+<p>基于现有文献研究，先前对毫米波信道建模、SC-FDE以及利用导频进行相位噪声估计的算法已经得到初步验证。文献中的仿真结果表明，在相应环境下，这些理论算法在毫米波频段具备一定的适应性和性能。基于这些基础，针对500Mbps传输方案，对单载波频域均衡算法和相位噪声补偿进行优化，并在发射帧结构中设定适当参数以实现500Mbps与1Gbps的速率切换。</p>
 <h4 id="资源需求与可获得性：">资源需求与可获得性：</h4>
-<p><strong>硬件与软件资源：</strong> 针对仿真和测试所需的硬件（例如射频前端设备）和软件（例如Matlab或其他仿真工具）资源，是否能够获得并支持所需的实验和验证？是否需要额外的设备或许可证？</p>
+<ul>
+<li><strong>软件支持：</strong> 实验室提供了Matlab和Vivado等仿真和数据处理软件的服务器支持，可为毫米波频段下的仿真实验提供高效的操作环境。</li>
+<li><strong>硬件支持：</strong> 实验室提供了较为完整的硬件中频/RF环回测试平台，这将对于验证毫米波频段下的传输方案和硬件测试具有重要意义。</li>
+</ul>
 <h4 id="仿真与实验可行性">仿真与实验可行性</h4>
+<ul>
+<li><strong>仿真计划：</strong> 已制定详细的毫米波频段仿真计划，涵盖不同场景下的多路径衰落、噪声环境以及不同速率模式下的传输，以验证和优化算法性能。</li>
+<li><strong>实验设计：</strong> 基于提供的硬件平台，设计了实验方案，旨在在硬件环境下验证理论算法的可行性和有效性。</li>
+<li><strong>可行性评估标准：</strong> 通过对比仿真与实验结果，评估提出的算法和方案的可行性，确保理论模型和硬件实验结果的一致性，从而验证方案在实际环境中的可靠性。</li>
+</ul>
 <h1>研究计划进度安排及预期目标</h1>
 <h3 id="进度安排">进度安排</h3>
 <h3 id="预期目标">预期目标</h3>
+<p>完成500Mbps毫米波传输方案和与1Gbps速率切换的研究和设计，用m代码初步仿真和v代码定点量化仿真，最终在FPGA硬件上完成测试。</p>
 <h1>目前已开展的研究（设计）工作及取得的阶段性结果</h1>
 <h3 id="设计">设计</h3>
+<h4 id="波形帧结构设计">波形帧结构设计</h4>
+<h5 id=""></h5>
 <p>首先采用莱斯衰落信道+白高斯信道模拟单载波毫米波信道，采用等效CP的频域均衡方案，采用UW信道估计+线性内插的方式做相位补偿。</p>
 <p>在解调部分利用导头PN序列实现定时同步和频偏补偿，利用参数PN序列完成传输速率档位的确定。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231226204749528.png" alt="image-20231226204749528">4.1 500Mbps波形设计</p>
+<h4 id="4-1-1波形帧结构设计">4.1.1波形帧结构设计</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesclip_image002.png" alt="img"></p>
+<p><strong>图4.1 500Mbps帧结构</strong></p>
+<p>如图4.1所示，500Mbps的数据SLOT采用750MHz的符号率传输，符号映射方式为QPSK；导头SLOT和参数SLOT采用125MHz的降符号率传输，符号映射方式为BPSK。一个传输帧按照资源块为传输单元可以划分为38个资源块，包括一个导头SLOT、一个参数SLOT和36个数据SLOT，传输帧时隙长度为1ms，保护间隔时长为240us.</p>
+<p><img src="C:/Users/ADMINI~1.DES/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png" alt="img"></p>
+<p><strong>图4.2 导头slot结构</strong></p>
+<p>如图4.2所示，导头SLOT采用72个PN31序列构成，前64个PN用于到达检测、频偏估计、定时同步等，后8个PN用做帧同步字，在PN序列后面填充268个冗余符号来满足25us的时隙要求，采用BPSK调制，初相为<img src="C:/Users/ADMINI~1.DES/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt="img">。</p>
+<p><img src="C:/Users/ADMINI~1.DES/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png" alt="img"></p>
+<p><strong>图4.3 参数slot结构</strong></p>
+<p>如图4.3所示，参数SLOT在PN31序列上进行二次调制，承载8bit的帧参数信息，可以用来实现多档速率传输的切换，同时为了传输的可靠性进行了8倍重传，在PN序列后面填充268个冗余符号来满足25us的时隙要求，采用BPSK调制，初相为<img src="C:/Users/ADMINI~1.DES/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt="img">。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesclip_image010.png" alt="img"></p>
+<p><strong>图4.4 数据slot结构</strong></p>
+<p>如图4.4所示，数据SLOT采用1+21+1的帧结构设计，在1+2+1的SC-FDE波形基础上，将两个UW字段中间的DATA块数量从2个拓展为21个，以提高频谱资源的利用率。每个UW和DATA块的前面插入80长度的循环前缀，用于抵抗信道多径带来的符号间干扰。末尾填充1896个冗余符号来满足时隙要求，UW采用BPSK调制，初相为<img src="C:/Users/ADMINI~1.DES/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt="img">，DATA采用QPSK调制，初相为![img](file:///C:/Users/ADMINI~1.DES/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png)。</p>
+<p>1Gbps速率档的信道编码采用（12288, 8192）的2/3码率LDPC码，CRC长度为32，每个码块包含的数据DATA块数量为12288/2/512=12 ，因此一帧的码块数量为36×32/12=63，链路信息速率计算如下：</p>
+<p>$$<br>
+R_{msg}=\frac{8160\times63}{1ms}=514.08Mbps&gt;500Mbps<br>
+$$<br>
+1Gbps链路物理帧开销计算如下：<br>
+$$<br>
+\eta_{frame}=(1-\frac{512\times21\times36}{1.5\times10^4\times38})=32.09%<br>
+$$</p>
 <h3 id="研究">研究</h3>
+<p>$$<br>
+SNR=EbN0+10\times log_{10}(log_2PSKMode)\times CodeRate)<br>
+$$</p>
+<p>$$<br>
+SNR= 6.5+10\times log_{10}(log_22\times\frac{2}{3})dB=4.74dB<br>
+$$</p>
+<p>$$<br>
+EsN0=EbN0+10\times log_{10}(CodeRate\times log_2PSK_Mode\times (1-FramesPay))<br>
+SNR=EsN0+10\times log_{10}(2\times SymbolRate/SampleRate)<br>
+$$</p>
 <h3 id="结果">结果</h3>
 
     </div>

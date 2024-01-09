@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>500M方案 | 回音</title>
+    <title>开题答辩讲稿 | 回音</title>
     <meta name="author" content="echo" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -154,22 +154,22 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>500M方案</h1>
+        <h1>开题答辩讲稿</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/13
+            2024/1/9
         </span>
         
         <span class="category">
-            <a href="/categories/%E7%A7%91%E7%A0%94/">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                科研
+                学习
             </a>
         </span>
         
@@ -182,12 +182,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%AF%AB%E7%B1%B3%E6%B3%A2/" style="color: #00a596">毫米波</a>
+                <a href="/tags/%E6%9C%AC%E7%A7%91%E6%AF%95%E8%AE%BE/" style="color: #ffa2c4">本科毕设</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/500M/" style="color: #ffa2c4">500M</a>
+                <a href="/tags/%E5%BC%80%E9%A2%98%E7%AD%94%E8%BE%A9%E8%AE%B2%E7%A8%BF/" style="color: #03a9f4">开题答辩讲稿</a>
             </span>
             
         </span>
@@ -195,22 +195,23 @@
     </div>
     
     <div class="content" v-pre>
-        <h1>修改方案设计</h1>
-<h3 id="数据slot结构">数据slot结构</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesdd8653150d5d6ea2b823091919a5fdf.jpg" alt=""></p>
-<h1>仿真结果</h1>
-<h3 id="门限信噪比仿真">门限信噪比仿真</h3>
-<p>（8192,12288）2/3LDPC码</p>
-<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231213210746631.png" alt="image-20231213210746631"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231213210824107.png" alt="image-20231213210824107"></p>
-<p>（8192,12288）2/3LDPC码的门限SNR为4.74dB。</p>
-<h3 id="解映射前的星座图">解映射前的星座图</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231214162132780.png" alt="image-20231214162132780"></p>
-<h3 id="只修改帧结构和LDPC编解码的误码率结果">只修改帧结构和LDPC编解码的误码率结果</h3>
-<p>在刚好为门限信噪比的信道中误码率为9.42e-04.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231214163439363.png" alt="image-20231214163439363"></p>
-<h3 id="改变llr计算方式后">改变llr计算方式后</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/jiaqishi-cmd/img@master//imagesimage-20231219120221672.png" alt="image-20231219120221672"></p>
+        <h1>答辩讲稿</h1>
+<p>尊敬的各位老师，上午好，我叫石家祺，我毕设的题目是毫米波高速传输技术研究和设计，我的指导老师是赵民建老师。</p>
+<p>我将从选题背景、研究现状、内容和技术路线、进度安排与预期目标、阶段性进展五个部分来介绍的我的毕设。</p>
+<p>首先是第一部分：选题背景。随着无线通信技术的发展，人们对于数据传输速率的要求不断提高，毫米波凭借其连续丰富的带宽，成为热门研究领域。此外毫米波还具有信号能量集中，导向性强的优点，近年来，得益于 CMOS 工艺和砷化物材料的发展，毫米波通信射频芯片的体积相比于微波器件小了许多，更加具有了实际应用价值。毫米波也存在一些缺点，如路径损耗和氧气衰减，这使得毫米波更加适用于短距离的室内通信。还存在多普勒频移，多径效应等影响接收端解调的问题，需要相应的模块解决这些问题。</p>
+<p>目前常用的毫米波通信系统有OFDM、SC-FDE两大类。它们在结构上主要区别在于IFFT模块位置，如图所示。在性能上，单载波系统除了在频带利用率上弱于OFDM,在峰均比、频偏敏感度、复杂度等方面都表现出更好的性能。</p>
+<p>下面是第二部分：研究现状。我将从定时同步、均衡与抗干扰和相噪补偿三方面介绍。</p>
+<p>由于接收机对数据的采样时刻可能并非最佳采样时刻，还有收发采样时钟的不同步都会引起定时误差，这就需要定时同步来补偿。早迟门和Gardner是比较有代表性的两种方法，早迟门相对结构简单，且功能集中在恢复最佳采样时钟，因而比Gardner应用广泛。</p>
+<p>毫米波信道的高频率特性和频率选择性衰落容易引发多径衰落和干扰，造成高比特差错率和符号间干扰的问题，这就需要均衡与抗干绕。早期无线通信中使用的是SC-TDE，随着传输速率的提升，需要较多滤波器抽头才能得到可接受的均衡效果，性能不足。常用的OFDM和SC-FDE各有优劣，OFDM胜在抗多径和频率选择性衰落能力强，SC-FDE对功率放大器的要求低。最常用的均衡算法是MMSE线性均衡，需要在均衡前做信道估计。后面也出现了迭代决策反馈的均衡方法实现非线性均衡，但是迭代处理复杂性比较高。</p>
+<p>毫米波还存在相位噪声的问题，目前的相位噪声估计和补偿算法大致可分为三类，常用的是方框框住的方法，在接收机估计相噪，并对数据信号进行相噪补偿。针对SC-FDE系统，有是否利用导频相噪估计的区别。利用导频的经典方法是导频+UW相噪估计，再线性内插补偿，引入自修正机制解决非线性补偿的。不利用导频，只使用UW估计相噪，可以提高帧结构的利用率，有基于LMS和ML的算法实现，但是需要循环前缀长度远大于信道长度，不然用于估计相噪的准确符号数量较少，会产生较大误差。</p>
+<p>下面是第三部分：内容与技术路线。我毕设的主要内容是设计实现并验证针对毫米波频段的500Mbps传输方案，采用SC-FDE系统，并考虑实现与1Gbps方案的档位切换，增强系统适应信道环境的能力。为了解调的成功，重点需要解决定时误差，码间干扰和相位噪声的问题。</p>
+<p>右图所示为技术路线图，经过前期的准备，先进行方案设计，尽量选择合适的方案，完成帧结构设计，随后使用MATLAB初步仿真，verilog量化仿真，最终在硬件上测试。</p>
+<p>下面是第四部分：进度安排与预期目标，如图所示是技术路线的在时间轴上的可视化。预期目标是依次实现毕设的研究内容。</p>
+<p>最后是第五部分：阶段性进展。500Mbps方案，1帧长度1ms，由一个导头SLOT、一个参数SLOT、36个数据SLOT组成，它们的传输速率、映射方式和如表格所示。</p>
+<p>导头SLOT的功能是时频同步，分为到达检测、频率精估计和帧同步；到达检测使用至少17个PN，实现125MHz下1/2符号定时误差和±1MHz定频误差，频率精估计使用16个PN实现10kHz量级频率同步，帧同步则是起到检测导头SLOT何时结束的功能。参数SLOT的功能是确定传输模式，还可以进一步做频率精估计，使得残余频偏限制在1kHz。数据slot中DATA块为经过编码的数据块，CP为循环前缀用于抵抗多径，UW字段用于早迟门重定时和估计信号初始相位。</p>
+<p>500Mbps速率档的信道编码采用（12288，8192）的2/3码率LDPC码，经过计算前面的帧结构的链路信息速率可以达到500Mbps传输速率，物理帧开销为32.09%。发射接收端的流程如图所示。</p>
+<p>下面是matlab上的初步仿真结果，首先是滤波器，从频域图中可以看出带宽限制在1GHz内。然后是门限信噪比的获取，从LDPC信道编码通过AWGN信道后解码的误码率曲线中可以看出1e-6误码率水平对应的门限SNR为4.74dB。在门限信噪比水平下，到达检测时频二维估计的结果显示，分辨性比较强，可以实现时频初步同步的功能。对比这两幅图可以看出经过早迟门定时同步、UW相位补偿和MMSE频域均衡后，星座图整体的EVM质量更好，提升了后续解调判决的性能。最后是总体结构的仿真，在莱斯多径信道中1e-6 误码率对应d SNR为2.34dB。</p>
+<p>敬请各位老师批评指正。</p>
 
     </div>
     
